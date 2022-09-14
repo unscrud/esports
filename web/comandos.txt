@@ -2,4 +2,5 @@ npm create vite@latest
 npm install
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+npm i phosphor-react
 npm run dev
