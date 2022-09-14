@@ -1,5 +1,6 @@
 npm init -y
 npm install express
+node .\src\server.js
 npm i typescript -D
 npm install @types/express -D
 npx tsc --init
