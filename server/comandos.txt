@@ -1,0 +1,7 @@
+npm init -y
+npm install express
+npm i typescript -D
+npm install @types/express -D
+npx tsc --init
+npm i ts-node-dev -D
+npm run build
