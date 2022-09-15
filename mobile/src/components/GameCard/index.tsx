@@ -1,10 +1,10 @@
-import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 export function GameCard() {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
 
-    </View>
+    </TouchableOpacity>
   );
 }
