@@ -36,6 +36,10 @@ export function GameCard({data, ...rest}: Props) {
       <Text style={styles.name}>
         {data.name}
       </Text>
+
+      <Text style={styles.ads}>
+        {data.ads} anúncios
+      </Text>
       </LinearGradient>    
     </TouchableOpacity>
   );
