@@ -33,8 +33,9 @@ export function GameCard({data, ...rest}: Props) {
         style={styles.footer}
       >
 
-      
-
+      <Text style={styles.name}>
+        {data.name}
+      </Text>
       </LinearGradient>    
     </TouchableOpacity>
   );
