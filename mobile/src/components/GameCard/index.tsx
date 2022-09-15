@@ -32,14 +32,13 @@ export function GameCard({data, ...rest}: Props) {
         colors={THEME.COLORS.FOOTER}
         style={styles.footer}
       >
+        <Text style={styles.name}>
+          {data.name}
+        </Text>
 
-      <Text style={styles.name}>
-        {data.name}
-      </Text>
-
-      <Text style={styles.ads}>
-        {data.ads} anúncios
-      </Text>
+        <Text style={styles.ads}>
+          {data.ads} anúncios
+        </Text>
       </LinearGradient>    
     </TouchableOpacity>
   );
