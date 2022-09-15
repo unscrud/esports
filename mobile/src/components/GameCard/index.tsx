@@ -26,20 +26,20 @@ export function GameCard({data, ...rest}: Props) {
       <ImageBackground 
         style={styles.cover}
         source={data.cover}
-      />
-
-      <LinearGradient
-        colors={THEME.COLORS.FOOTER}
-        style={styles.footer}
       >
-        <Text style={styles.name}>
-          {data.name}
-        </Text>
+        <LinearGradient
+          colors={THEME.COLORS.FOOTER}
+          style={styles.footer}
+        >
+          <Text style={styles.name}>
+            {data.name}
+          </Text>
 
-        <Text style={styles.ads}>
-          {data.ads} anúncios
-        </Text>
-      </LinearGradient>    
+          <Text style={styles.ads}>
+            {data.ads} anúncios
+          </Text>
+        </LinearGradient>
+      </ImageBackground>
     </TouchableOpacity>
   );
 }
