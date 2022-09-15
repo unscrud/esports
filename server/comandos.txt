@@ -7,6 +7,8 @@ npx tsc --init
 npm i ts-node-dev -D
 npm i prisma -D
 npm i @prisma/client
+npm i cors
+npm i @types/cors -D
 npx prisma init
 npx prisma init -h   # adicionando -h, será exibida uma documentação
 npx prisma init --datasource-provider SQLite
