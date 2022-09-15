@@ -8,7 +8,11 @@ export interface GameCardProps {
   cover: ImageSourcePropType;
 }
 
-export function GameCard() {
+interface Props {
+  data: GameCardProps;
+}
+
+export function GameCard({data}: Props) {
   return (
     <TouchableOpacity style={styles.container}>
       
