@@ -1,3 +1,4 @@
 npm install --global expo-cli
 expo init mobile
+npx expo install expo-font @expo-google-fonts/inter
 expo start
