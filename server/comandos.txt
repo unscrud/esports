@@ -5,5 +5,6 @@ npm i typescript -D
 npm install @types/express -D
 npx tsc --init
 npm i ts-node-dev -D
+npm i prisma -D
 npm run build
 npm run dev
