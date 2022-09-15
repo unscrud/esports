@@ -6,6 +6,7 @@ npm install @types/express -D
 npx tsc --init
 npm i ts-node-dev -D
 npm i prisma -D
+npm i @prisma/client
 npx prisma init
 npx prisma init -h   # adicionando -h, será exibida uma documentação
 npx prisma init --datasource-provider SQLite
