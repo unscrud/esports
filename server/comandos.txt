@@ -9,5 +9,6 @@ npm i prisma -D
 npx prisma init
 npx prisma init -h   # adicionando -h, será exibida uma documentação
 npx prisma init --datasource-provider SQLite
+npx prisma migrate dev
 npm run build
 npm run dev
