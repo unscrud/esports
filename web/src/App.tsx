@@ -5,6 +5,7 @@ import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 import * as Dialog from "@radix-ui/react-dialog";
 import { GameController } from 'phosphor-react';
+import { Input } from './components/Form/Input';
 
 interface Game {
   id: string;
@@ -51,22 +52,22 @@ function App() {
                 <form>
                   <div>
                     <label htmlFor="game">Qual é o game?</label>
-                    <input id="game" type="text" placeholder='Selecione o game que deseja jogar' />
+                    <Input id="game" type="text" placeholder='Selecione o game que deseja jogar' />
                   </div>
 
                   <div>
                     <label htmlFor="name">Seu nome (ou nickname)</label>
-                    <input type="text" placeholder='Como te chamam dentro do game?' />
+                    <Input type="text" placeholder='Como te chamam dentro do game?' />
                   </div>
 
                   <div>
                     <div>
                       <label htmlFor="yearsPlayng">Joga há quantos anos?</label>
-                      <input id="yearsPlayng" type="number" placeholder='Tudo bem ser ZERO' />
+                      <Input id="yearsPlayng" type="number" placeholder='Tudo bem ser ZERO' />
                     </div>
                     <div>
                       <label htmlFor="discord">Qual seu Discord?</label>
-                      <input id='discord' type="text" placeholder='Usuario#0000' />
+                      <Input id='discord' type="text" placeholder='Usuario#0000' />
                     </div>
                   </div>
                   
@@ -77,10 +78,10 @@ function App() {
                     <div>
                       <label htmlFor="hourStart">Qual horário do dia?</label>
                       <div>
-                        <input id='hourStart' type="time" placeholder='De' />
+                        <Input id='hourStart' type="time" placeholder='De' />
                       </div>
                       <div>
-                        <input id='hourEnd' type="time" placeholder='Aré' />
+                        <Input id='hourEnd' type="time" placeholder='Aré' />
                       </div>
                     </div>
                   </div>
