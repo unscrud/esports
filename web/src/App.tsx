@@ -14,7 +14,7 @@ interface Game {
 }
 
 function App() {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
       fetch('http://localhost:3333/games')
