@@ -4,6 +4,15 @@ import logoImg from './assets/logo-nlw-esports.svg';
 import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 
+interface Game {
+  id: string;
+  title: string;
+  bannerUrl: string;
+  _count: {
+    ads: number;
+  }
+}
+
 function App() {
   const [games, setGames] = useState([]);
 
