@@ -5,6 +5,8 @@ import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 
 function App() {
+  useState(false);
+
   return (
     <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
       <img src={logoImg} alt="" />
