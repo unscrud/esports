@@ -4,6 +4,7 @@ import logoImg from './assets/logo-nlw-esports.svg';
 import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 import * as Dialog from "@radix-ui/react-dialog";
+import { GameController } from 'phosphor-react';
 
 interface Game {
   id: string;
@@ -92,7 +93,10 @@ function App() {
 
                     <footer>
                       <button>Cancelar</button>
-                      <button type='submit'>Encontrar duo</button>
+                      <button type='submit'>
+                        <GameController />
+                        Encontrar duo
+                      </button>
                     </footer>
                   </form>
                 </Dialog.Content>
