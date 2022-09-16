@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/main.css';
 import logoImg from './assets/logo-nlw-esports.svg';
 import { GameBanner } from "./components/GameBanner";
