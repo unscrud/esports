@@ -5,24 +5,13 @@ import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 
 function App() {
-  const [hasUserClickedButton, setHasUserClickedButton] = useState(false);
-
-  function handleButtonClick(){
-    setHasUserClickedButton(!hasUserClickedButton);
-  }
-
-  useEffect(
-    () => {console.log(hasUserClickedButton)},
-    [hasUserClickedButton]
-  );
+  const [games, setGames] = useState([]);
 
   return (
     <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
       <img src={logoImg} alt="" />
 
       <h1 className='text-6xl text-white font-black mt-20'>Seu <span className='text-transparent bg-duo-gradient bg-clip-text'>duo</span> está aqui.</h1>
-      <button onClick={handleButtonClick}>Clique aqui</button>
-      {hasUserClickedButton?'Usuário Clicou':null}
 
       <div className='grid grid-cols-6 gap-6 mt-16'>
         <GameBanner bannerUrl="/game-1.png" title="title 1" adsCount={1} />
