@@ -5,7 +5,7 @@ import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 
 function App() {
-  const [] = useState(false);
+  const [hasUserClickedButton, setHasUserClickedButton] = useState(false);
 
   return (
     <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
