@@ -7,6 +7,12 @@ import { CreateAdBanner } from "./components/CreateAdBanner";
 function App() {
   const [games, setGames] = useState([]);
 
+  useEffect(() => {
+      fetch('http://localhost:3333/games')
+        .then( response => response.json() )
+        .then( data => { console.log(data)});
+    }, []);
+
   return (
     <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
       <img src={logoImg} alt="" />
