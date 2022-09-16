@@ -8,11 +8,11 @@ function App() {
   const [hasUserClickedButton, setHasUserClickedButton] = useState(false);
 
   function handleButtonClick(){
-    setHasUserClickedButton(true);
+    setHasUserClickedButton(!hasUserClickedButton);
   }
 
   useEffect(
-    () => {console.log("teste")},
+    () => {console.log(hasUserClickedButton)},
     [hasUserClickedButton]
   );
 
