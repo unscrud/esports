@@ -4,8 +4,15 @@ import { GameCard } from '../../components/GameCard';
 import { Heading } from '../../components/Heading';
 import { styles } from './styles';
 import { GAMES } from '../../utils/games';
+import { useEffect } from 'react';
 
 export function Home() {
+useEffect(() => {
+  fetch('http://192.168.1.22:3333/games')
+    .then(response => response.json())
+    .then(data => console.log(data))
+}, [])
+
   return (
     <View style={styles.container}>
       <Image 
@@ -29,5 +36,5 @@ export function Home() {
         contentContainerStyle={styles.contentList}
       />
     </View>
-  );
+  )
 }
