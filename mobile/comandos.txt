@@ -3,4 +3,9 @@ expo init mobile
 npx expo install expo-font @expo-google-fonts/inter
 expo install react-native-safe-area-context
 expo install expo-linear-gradient
+
+# Biblioteca react navigation
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+
 expo start
