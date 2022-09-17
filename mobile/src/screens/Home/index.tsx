@@ -41,7 +41,7 @@ export function Home() {
         renderItem={({item}) => (
           <GameCard
             data={item}
-            onPress={handleOpenGame}
+            onPress={() => handleOpenGame(item)}
           />
         )}
         showsHorizontalScrollIndicator={false}
