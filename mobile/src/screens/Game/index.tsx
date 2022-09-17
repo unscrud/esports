@@ -22,6 +22,11 @@ export function Game() {
               color={THEME.COLORS.CAPTION_300}
               size={20}
             />
+            
+            <Image
+              source={logoImg}
+              style={styles.logo}
+            />
           </TouchableOpacity>
         </View>
       </SafeAreaView>
