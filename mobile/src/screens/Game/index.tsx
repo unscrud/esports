@@ -22,12 +22,14 @@ export function Game() {
               color={THEME.COLORS.CAPTION_300}
               size={20}
             />
-            
-            <Image
-              source={logoImg}
-              style={styles.logo}
-            />
           </TouchableOpacity>
+            
+          <Image
+            source={logoImg}
+            style={styles.logo}
+          />
+
+          <View style={styles.right} />
         </View>
       </SafeAreaView>
     </Background>
