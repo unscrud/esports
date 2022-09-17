@@ -15,7 +15,15 @@ export function Game() {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
-
+      <View style={styles.header}>
+          <TouchableOpacity>
+            <Entypo 
+              name='chevron-thin-left'
+              color={THEME.COLORS.CAPTION_300}
+              size={20}
+            />
+          </TouchableOpacity>
+        </View>
       </SafeAreaView>
     </Background>
   );
