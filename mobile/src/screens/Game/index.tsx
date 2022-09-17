@@ -6,7 +6,7 @@ import { GameParams } from '../../@types/navigation';
 import { Image, TouchableOpacity, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { THEME } from '../../theme';
-import { logoImg } from "../../assets/logo-nlw-esports.png";
+import logoImg from '../../assets/logo-nlw-esports.png';
 
 export function Game() {
   const route = useRoute()
