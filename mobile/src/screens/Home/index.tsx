@@ -28,7 +28,7 @@ export function Home() {
       />
 
       <FlatList
-        data={GAMES}
+        data={games}
         keyExtractor={item => item.id}
         renderItem={({item}) => (
           <GameCard data={item} />
