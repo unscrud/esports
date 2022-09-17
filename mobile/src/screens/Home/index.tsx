@@ -1,4 +1,4 @@
-import { View, Image, FlatList } from 'react-native';
+import { Image, FlatList } from 'react-native';
 import logoImg from '../../assets/logo-nlw-esports.png'
 import { GameCard, GameCardProps } from '../../components/GameCard';
 import { Heading } from '../../components/Heading';
