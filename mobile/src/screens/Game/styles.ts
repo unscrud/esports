@@ -23,9 +23,17 @@ export const styles = StyleSheet.create({
   },
   cover: {
     width: 311,
-    height: 220,
+    height: 190,
     borderRadius: 8,
     marginTop: 32
+  },
+  containerList: {
+    width: '100%'
+  },
+  contentList: {
+    paddingLeft: 32,
+    paddingRight: 64,
+    alignItems: 'flex-start'
   }
 
 });
