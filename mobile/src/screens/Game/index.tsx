@@ -3,7 +3,7 @@ import { Background } from '../../components/Background';
 import { styles } from './styles';
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { GameParams } from '../../@types/navigation';
-import { Image, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, TouchableOpacity, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png';
@@ -58,7 +58,13 @@ export function Game() {
           subtitle='Conecte-se e comece a jogar!'
         />
 
-        <DuoCard data={duos[0]} />
+        <FlatList 
+          data={duos}
+          keyExtractor={item => item.id}
+          renderItem={({item}) =>(
+            <DuoCard data={item} />
+          )}
+        />
       </SafeAreaView>
     </Background>
   );
