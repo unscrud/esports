@@ -8,7 +8,7 @@ import { Entypo } from "@expo/vector-icons";
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png';
 import { Heading } from '../../components/Heading';
-import { DuoCard } from '../../components/DuoCard';
+import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { useState, useEffect } from "react";
 
 export function Game() {
