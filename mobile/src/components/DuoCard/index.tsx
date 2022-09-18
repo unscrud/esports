@@ -12,7 +12,11 @@ export interface DuoCardProps {
   yearsPlayng: number;
 }
 
-export function DuoCard() {
+interface Props {
+  data: DuoCardProps;
+}
+
+export function DuoCard({data}: Props) {
   return (
     <View style={styles.container}>
 
