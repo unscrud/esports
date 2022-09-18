@@ -20,7 +20,7 @@ export function Game() {
     navigation.goBack()
   }
 
-  const [duos, setDuos] = useState([]);
+  const [duos, setDuos] = useState<DuoCardProps[]>([]);
   useEffect(() => {
     fetch(`http://192.168.1.22:3333/games/${game.id}/ads`)
       .then(response => response.json())
