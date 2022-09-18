@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+import { THEME } from '../../theme';
 import { DuoInfo } from '../DuoInfo';
 
 import { styles } from './styles';
@@ -37,8 +38,8 @@ export function DuoCard({data}: Props) {
 
       <DuoInfo
         label='Chamada de áudio?'
-        value={data.useVoiceChannel?'Sim':'Não'}
-        colorValue='green'
+        value={ data.useVoiceChannel ? 'Sim' : 'Não'}
+        colorValue={ data.useVoiceChannel ? THEME.COLORS.SUCCESS : THEME.COLORS.ALERT }
       />
     </View>
   );
