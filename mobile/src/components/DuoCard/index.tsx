@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+import { DuoInfo } from '../DuoInfo';
 
 import { styles } from './styles';
 
@@ -19,7 +20,24 @@ interface Props {
 export function DuoCard({data}: Props) {
   return (
     <View style={styles.container}>
+      <DuoInfo
+        label='Nome'
+        value={data.name}
+      />
 
+      <DuoInfo
+        label='Tempo de jogo'
+        value={`${data.yearsPlayng} ano(s)`}
+      />
+
+      <DuoInfo
+        label='Disponibilidade'
+        value='CAAAALLLLMMAAAA!!!!'
+      />
+      <DuoInfo
+        label='Chamada de áudio?'
+        value={data.useVoiceChannel?'Sim':'Não'}
+      />
     </View>
   );
 }
