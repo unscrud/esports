@@ -9,6 +9,7 @@ import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png';
 import { Heading } from '../../components/Heading';
 import { DuoCard } from '../../components/DuoCard';
+import { useState, useEffect } from "react";
 
 export function Game() {
   const route = useRoute()
@@ -18,6 +19,13 @@ export function Game() {
   function handleGoBack(){
     navigation.goBack()
   }
+
+  const [duos, setDuos] = useState([]);
+  useEffect(() => {
+    fetch(`http://192.168.1.22:3333/games/${game.id}/ads`)
+      .then(response => response.json())
+      .then(data => {console.log(data)})
+  }, [])
 
   return (
     <Background>
