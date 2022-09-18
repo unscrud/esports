@@ -24,7 +24,7 @@ export function Game() {
   useEffect(() => {
     fetch(`http://192.168.1.22:3333/games/${game.id}/ads`)
       .then(response => response.json())
-      .then(data => {console.log(data)})
+      .then(data => {setDuos(data)})
   }, [])
 
   return (
@@ -58,7 +58,7 @@ export function Game() {
           subtitle='Conecte-se e comece a jogar!'
         />
 
-        <DuoCard />
+        <DuoCard data={duos[0]} />
       </SafeAreaView>
     </Background>
   );
