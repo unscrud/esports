@@ -7,6 +7,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { THEME } from '../../theme';
 import logoImg from '../../assets/logo-nlw-esports.png';
+import { Heading } from '../../components/Heading';
 
 export function Game() {
   const route = useRoute()
@@ -31,6 +32,11 @@ export function Game() {
 
           <View style={styles.right} />
         </View>
+
+        <Heading
+          title= {game.title}
+          subtitle='Conecte-se e comece a jogar!'
+        />
       </SafeAreaView>
     </Background>
   );
