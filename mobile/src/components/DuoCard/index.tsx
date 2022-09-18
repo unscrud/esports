@@ -10,7 +10,7 @@ export interface DuoCardProps {
   name: string;
   useVoiceChannel: boolean;
   weekDays: string[];
-  yearsPlayng: number;
+  yearsPlaying: number;
 }
 
 interface Props {
@@ -27,16 +27,18 @@ export function DuoCard({data}: Props) {
 
       <DuoInfo
         label='Tempo de jogo'
-        value={`${data.yearsPlayng} ano(s)`}
+        value={`${data.yearsPlaying} ano(s)`}
       />
 
       <DuoInfo
         label='Disponibilidade'
-        value='CAAAALLLLMMAAAA!!!!'
+        value={`${data.weekDays.length} dia(s) \u2022 ${data.hourStart} - ${data.hourEnd}`}
       />
+
       <DuoInfo
         label='Chamada de áudio?'
         value={data.useVoiceChannel?'Sim':'Não'}
+        colorValue='green'
       />
     </View>
   );
