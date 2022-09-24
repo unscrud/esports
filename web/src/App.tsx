@@ -5,15 +5,7 @@ import { GameBanner } from "./components/GameBanner";
 import { CreateAdBanner } from "./components/CreateAdBanner";
 import { CreateAdModal } from "./components/CreateAdModal";
 import * as Dialog from "@radix-ui/react-dialog";
-
-interface Game {
-  id: string;
-  title: string;
-  bannerUrl: string;
-  _count: {
-    ads: number;
-  }
-}
+import { Game } from "./interfaces/Game"
 
 function App() {
   const [games, setGames] = useState<Game[]>([]);
