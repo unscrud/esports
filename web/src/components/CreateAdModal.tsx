@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { Check, GameController } from 'phosphor-react';
 import { Input } from './Form/Input';
 import * as Dialog from "@radix-ui/react-dialog";
@@ -17,12 +17,16 @@ export function CreateAdModal() {
 
     const [weekDays, setWeekDays] = useState<string[]>(['1']);
 
+    function handleCreateAd(event: FormEvent) {
+      event.preventDefault()
+      console.log("enviou...")
+    }
   return (
     <Dialog.Portal>
       <Dialog.Overlay className='bg-black/60 inset-0 fixed' />
       <Dialog.Content className='fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/50'>
         <Dialog.Title className='text-3xl text-white font-black'>Publique um anúncio</Dialog.Title>
-        <form className='mt-8 flex flex-col gap-4'>
+        <form onSubmit={handleCreateAd} className='mt-8 flex flex-col gap-4'>
           <div className='flex flex-col gap-2'>
             <label className='font-semibold' htmlFor="game">Qual é o game?</label>
             
