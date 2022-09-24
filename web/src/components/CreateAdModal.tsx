@@ -8,6 +8,8 @@ import { Game } from "../interfaces/Game"
 
 export function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([]);
+  const [weekDays, setWeekDays] = useState<string[]>([]);
+  const [useVoiceChannel,setUseVoiceChannel] = useState(false);
 
   useEffect(() => {
       fetch('http://localhost:3333/games')
@@ -15,12 +17,15 @@ export function CreateAdModal() {
         .then( data => { setGames(data) });
     }, []);
 
-    const [weekDays, setWeekDays] = useState<string[]>(['1']);
+  function handleCreateAd(event: FormEvent) {
+    event.preventDefault()
+    const formData = new FormData(event.target as HTMLFormElement)
+    const data = Object.fromEntries(formData)
+    console.log(useVoiceChannel)
+    console.log(weekDays)
+    console.log(data)
+  }
 
-    function handleCreateAd(event: FormEvent) {
-      event.preventDefault()
-      console.log("enviou...")
-    }
   return (
     <Dialog.Portal>
       <Dialog.Overlay className='bg-black/60 inset-0 fixed' />
@@ -31,30 +36,29 @@ export function CreateAdModal() {
             <label className='font-semibold' htmlFor="game">Qual é o game?</label>
             
             <select 
-              id="game"
+              id="game" name="game" defaultValue=''
               className='bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none'
-              defaultValue=''
             >
               <option disabled value="">Selecione o game que deseja jogar</option>
               {games.map(game => {
-                return <option key={game.id}>{game.title}</option>
+                return <option key={game.id} value={game.id}>{game.title}</option>
               })}
             </select>
           </div>
 
           <div className='flex flex-col gap-2'>
             <label className='font-semibold' htmlFor="name">Seu nome (ou nickname)</label>
-            <Input type="text" placeholder='Como te chamam dentro do game?' />
+            <Input name='name' id='name' type="text" placeholder='Como te chamam dentro do game?' />
           </div>
 
           <div className='grid grid-cols-2 gap-6'>
             <div className='flex flex-col gap-2'>
               <label className='font-semibold' htmlFor="yearsPlayng">Joga há quantos anos?</label>
-              <Input id="yearsPlayng" type="number" placeholder='Tudo bem ser ZERO' />
+              <Input name='yearsPlayng' id="yearsPlayng" type="number" placeholder='Tudo bem ser ZERO' />
             </div>
             <div  className='flex flex-col gap-2'>
               <label className='font-semibold' htmlFor="discord">Qual seu Discord?</label>
-              <Input id='discord' type="text" placeholder='Usuario#0000' />
+              <Input name='discord' id='discord' type="text" placeholder='Usuario#0000' />
             </div>
           </div>
           
@@ -126,14 +130,23 @@ export function CreateAdModal() {
             <div className='flex flex-col gap-2 flex-1'>
               <label className='font-semibold' htmlFor="hourStart">Qual horário do dia?</label>
               <div className='grid grid-cols-2 gap-2'>
-                <Input id='hourStart' type="time" title='De' />
-                <Input id='hourEnd' type="time" title='Aré' />
+                <Input name='hourStart' id='hourStart' type="time" title='De' />
+                <Input name='hourEnd' id='hourEnd' type="time" title='Aré' />
               </div>
             </div>
           </div>
 
           <label className='mt2 flex items-center gap-2 text-sm'>
-            <Checkbox.Root className='w-6 h-6 p-1 rounded bg-zinc-900'>
+            <Checkbox.Root
+              checked={useVoiceChannel}
+              onCheckedChange={(checked)=>{
+                if (checked === true)
+                  setUseVoiceChannel(true)
+                else
+                  setUseVoiceChannel(false)
+              }}
+              className='w-6 h-6 p-1 rounded bg-zinc-900'
+            >
               <Checkbox.Indicator>
                 <Check className='w-4 h-4 text-emerald-400' />
               </Checkbox.Indicator>
