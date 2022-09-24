@@ -1,9 +1,19 @@
+import { useState, useEffect } from 'react';
 import { Check, GameController } from 'phosphor-react';
 import { Input } from './Form/Input';
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
+import { Game } from "../interfaces/Game"
 
 export function CreateAdModal() {
+  const [games, setGames] = useState<Game[]>([]);
+
+  useEffect(() => {
+      fetch('http://localhost:3333/games')
+        .then( response => response.json() )
+        .then( data => { setGames(data) });
+    }, []);
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className='bg-black/60 inset-0 fixed' />
