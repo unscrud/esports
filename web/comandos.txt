@@ -6,5 +6,6 @@ npm i phosphor-react
 npm i @radix-ui/react-dialog
 npm i @radix-ui/react-checkbox
 npm i @radix-ui/react-select
+npm i @radix-ui/react-toggle-group
   # ver headlessui.com ... ariakit.org ... radix-ui.com
 npm run dev
