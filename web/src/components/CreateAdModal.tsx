@@ -21,9 +21,16 @@ export function CreateAdModal() {
     event.preventDefault()
     const formData = new FormData(event.target as HTMLFormElement)
     const data = Object.fromEntries(formData)
-    console.log(useVoiceChannel)
-    console.log(weekDays)
-    console.log(data)
+    
+    axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+      "name": data.name,
+      "yearsPlaying": Number(data.yearsPlaying),
+      "discord": data.discord,
+      "weekDays": weekDays.map(Number),
+      "hourStart": data.hourStart,
+      "hourEnd": data.hourEnd,
+      "useVoiceChannel": useVoiceChannel
+    })
   }
 
   return (
