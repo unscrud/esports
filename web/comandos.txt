@@ -15,3 +15,7 @@ npm i keen-slider
 npm i react-hook-form
   # validacao de formulario
 npm run dev
+
+implementar select com radix, validacao do form com react-hook-form em conjunto com o zod
+https://react-hook-form.com/get-started#SchemaValidation
+https://github.com/colinhacks/zod
