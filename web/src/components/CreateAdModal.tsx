@@ -4,6 +4,7 @@ import { Input } from './Form/Input';
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
+import * as Select from '@radix-ui/react-select';
 import { Game } from "../interfaces/Game"
 import axios from 'axios';
 
@@ -62,6 +63,32 @@ export function CreateAdModal() {
                 return <option key={game.id} value={game.id}>{game.title}</option>
               })}
             </select>
+{/* 
+            <Select.Root>
+              <Select.Trigger>
+                <Select.Value placeholder="Selecione o game que deseja jogar" />
+                <Select.Icon />
+              </Select.Trigger>
+
+              <Select.Portal>
+                <Select.Content>
+                  <Select.ScrollUpButton />
+                    <Select.Viewport>
+                      {games.map(game => {
+                        return (
+                          <Select.Item value={game.id}>
+                            <Select.ItemText>{game.title}</Select.ItemText>
+                            <Select.ItemIndicator>
+                            </Select.ItemIndicator>
+                          </Select.Item>
+                        )
+                      })}
+                    </Select.Viewport>
+                  <Select.ScrollDownButton />
+                </Select.Content>
+              </Select.Portal>
+            </Select.Root>
+ */}
           </div>
 
           <div className='flex flex-col gap-2'>
