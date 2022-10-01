@@ -4,7 +4,7 @@ import { Input } from './Form/Input';
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import * as Select from '@radix-ui/react-select';
+//import * as Select from '@radix-ui/react-select';
 import { Game } from "../interfaces/Game"
 import axios from 'axios';
 
