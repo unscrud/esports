@@ -10,4 +10,6 @@ npm i @radix-ui/react-toggle-group
   # ver headlessui.com ... ariakit.org ... radix-ui.com
 npm i axios 
   #usado no lugar do fetch
+npm i keen-slider
+  #carrossel
 npm run dev
