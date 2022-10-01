@@ -17,20 +17,27 @@ export function CreateAdModal() {
         .then( response => { setGames(response.data) });
     }, []);
 
-  function handleCreateAd(event: FormEvent) {
+  async function handleCreateAd(event: FormEvent) {
     event.preventDefault()
     const formData = new FormData(event.target as HTMLFormElement)
     const data = Object.fromEntries(formData)
     
-    axios.post(`http://localhost:3333/games/${data.game}/ads`, {
-      "name": data.name,
-      "yearsPlaying": Number(data.yearsPlaying),
-      "discord": data.discord,
-      "weekDays": weekDays.map(Number),
-      "hourStart": data.hourStart,
-      "hourEnd": data.hourEnd,
-      "useVoiceChannel": useVoiceChannel
-    })
+    try {
+      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+        name: data.name,
+        yearsPlaying: Number(data.yearsPlaying),
+        discord: data.discord,
+        weekDays: weekDays.map(Number),
+        hourStart: data.hourStart,
+        hourEnd: data.hourEnd,
+        useVoiceChannel: useVoiceChannel
+      })
+
+      alert('Anúncio criado com sucesso!')
+    } catch (err) {
+      console.log(err)
+      alert('Erro ao criar o anúncio!')
+    }
   }
 
   return (
@@ -60,8 +67,8 @@ export function CreateAdModal() {
 
           <div className='grid grid-cols-2 gap-6'>
             <div className='flex flex-col gap-2'>
-              <label className='font-semibold' htmlFor="yearsPlayng">Joga há quantos anos?</label>
-              <Input name='yearsPlayng' id="yearsPlayng" type="number" placeholder='Tudo bem ser ZERO' />
+              <label className='font-semibold' htmlFor="yearsPlaying">Joga há quantos anos?</label>
+              <Input name='yearsPlaying' id="yearsPlaying" type="number" placeholder='Tudo bem ser ZERO' />
             </div>
             <div  className='flex flex-col gap-2'>
               <label className='font-semibold' htmlFor="discord">Qual seu Discord?</label>
