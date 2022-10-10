@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Modal, ModalProps } from 'react-native';
+import { View, Modal, ModalProps, Text } from 'react-native';
 
 import { styles } from './styles';
 
