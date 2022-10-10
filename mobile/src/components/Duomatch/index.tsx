@@ -1,12 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Modal } from 'react-native';
 
 import { styles } from './styles';
 
 export function Duomatch() {
   return (
-    <View style={styles.container}>
+    <Modal>
+      <View style={styles.container}>
 
-    </View>
+      </View>
+    </Modal>
   );
 }
