@@ -1,13 +1,21 @@
 import React from 'react';
-import { View, Modal } from 'react-native';
+import { View, Modal, ModalProps } from 'react-native';
 
 import { styles } from './styles';
 
-export function Duomatch() {
-  return (
-    <Modal>
-      <View style={styles.container}>
+interface Props extends ModalProps {
+  discord: string;
+}
 
+export function DuoMatch({discord, ...rest}: Props) {
+  return (
+    <Modal
+      {...rest}
+    >
+      <View style={styles.container}>
+        <Text style={styles.discord}>
+          {discord}
+        </Text>
       </View>
     </Modal>
   );
