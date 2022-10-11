@@ -15,6 +15,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  closeIcon: {
+    alignSelf: 'flex-end',
+    margin: 16
+  },
   discord: {
     color: THEME.COLORS.TEXT,
     fontSize: THEME.FONT_SIZE.MD,
