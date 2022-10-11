@@ -13,9 +13,11 @@ export function DuoMatch({discord, ...rest}: Props) {
       {...rest}
     >
       <View style={styles.container}>
-        <Text style={styles.discord}>
-          {discord}
-        </Text>
+        <View style={styles.content}>
+          <Text style={styles.discord}>
+            {discord}
+          </Text>
+        </View>
       </View>
     </Modal>
   );
