@@ -28,6 +28,8 @@ export function Game() {
       .then(data => {setDuos(data)})
   }, [])
 
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('test');
+
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -79,8 +81,9 @@ export function Game() {
         <DuoMatch
           transparent
           statusBarTranslucent
-          visible={true}
+          visible={discordDuoSelected.length > 0}
           discord="exemplo"
+          onClose={() => setDiscordDuoSelected('')}
         />
       </SafeAreaView>
     </Background>
