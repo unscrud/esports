@@ -10,6 +10,7 @@ import logoImg from '../../assets/logo-nlw-esports.png';
 import { Heading } from '../../components/Heading';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { useState, useEffect } from "react";
+import { DuoMatch } from "../../components/DuoMatch";
 
 export function Game() {
   const route = useRoute()
@@ -73,6 +74,13 @@ export function Game() {
               Não há anúncios publicados ainda.
             </Text>
           )}
+        />
+
+        <DuoMatch
+          transparent
+          statusBarTranslucent
+          visible={true}
+          discord="exemplo"
         />
       </SafeAreaView>
     </Background>
