@@ -14,21 +14,20 @@ import { DuoMatch } from "../../components/DuoMatch";
 
 export function Game() {
   const route = useRoute()
-  const game = route.params as GameParams
-  
   const navigation = useNavigation()
+  const game = route.params as GameParams
+  const [duos, setDuos] = useState<DuoCardProps[]>([]);
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('test');
+  
   function handleGoBack(){
     navigation.goBack()
   }
 
-  const [duos, setDuos] = useState<DuoCardProps[]>([]);
   useEffect(() => {
     fetch(`http://192.168.1.22:3333/games/${game.id}/ads`)
       .then(response => response.json())
       .then(data => {setDuos(data)})
   }, [])
-
-  const [discordDuoSelected, setDiscordDuoSelected] = useState('test');
 
   return (
     <Background>
