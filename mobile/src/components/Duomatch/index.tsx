@@ -37,10 +37,12 @@ export function DuoMatch({discord, onClose, ...rest}: Props) {
           <Text style={styles.label}>
             Adicione no Discord
           </Text>
-
-          <Text style={styles.discord}>
-            {discord}
-          </Text>
+          
+          <TouchableOpacity style={styles.discordButton}>
+            <Text style={styles.discord}>
+              {discord}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </Modal>
