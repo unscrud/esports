@@ -6,10 +6,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Background } from '../../components/Background';
 import { THEME } from '../../theme';
 import { GameController } from 'phosphor-react-native';
+import * as AuthSession from 'expo-auth-session';
 
 export function SignIn() {
   async function handleDiscordSignIn(){
-
+    AuthSession.startAsync({
+      authUrl: "urlFake"
+    })
   }
 
   return (
